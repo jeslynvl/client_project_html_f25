@@ -33,6 +33,7 @@ h2 {
 }
 p, li {
     font-size: 1rem;
+    margin: 0 auto 0.5rem auto;
 }
 ul {
     margin-left: 1.5rem;
@@ -113,81 +114,42 @@ nav a {
     padding: 0.5rem 1rem;
 }
 
+
 /* ------- Main Layout ------- */
 main {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;  /* single column layout */
+    gap: 2rem;                   /* spacing between divs */
     margin-top: 1rem;
 }
+
 main > div {
     background-color: white;
     border-radius: 0.25rem;
     padding: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Content taken & modified from UMGPT with the prompt: how do i add a slight drop shadow for each div? UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
+
+    color: #00274C;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    text-align: left;
 }
+
+main > div ol, main > div ul {
+    margin-left: 0;
+    padding-left: 1.5rem;
+}
+/* Content taken & modified from UMGPT with the prompt: the ordered list numbers are outside of the box. how do i fix this? UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
+
 main img, main iframe {
-    display: block;      /* makes margin auto centering work */
-    margin: 0.75rem auto 0.75rem auto; /* top and bottom margin, horizontal centering */
-    width: 80%;         /* responsive width */
-    height: auto;        /* maintain aspect ratio */
-} 
+    display: block;                             /* allow horizontal centering */
+    margin: 0.75rem auto 0.75rem auto;         /* top/bottom margin + horizontal centering */
+    max-width: 80%;                            /* never exceed container */
+    height: auto;                               /* maintain aspect ratio */
+    border-radius: 0.25rem;                     /* rounded corners for images */
+}
+
 main > div a {
     color: #00274C;
     text-decoration: underline;
-}
-main > div a:hover, main > div a:focus {
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-
-/* Grid layout for the buttons */
-.start-here .button-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 1rem;
-    justify-items: center;
-    margin-top: 1rem;
-}
-
-.start-here .button-grid .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    background-color: #00274C;
-    color: #ffffff;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out; 
-    text-align: center;
-    width: 100%;                /* fill grid column */
-    border-radius: 0.25rem;
-    box-sizing: border-box;
-}
-.start-here .button-grid .button:hover, .start-here .button-grid .button:focus {
-    background-color: #FFCB05;
-    color: #00274C;
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    border-radius: 0.25rem;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    text-align: center;
-    background-color: #00274C;
-    color: #ffffff;
-    line-height: 1.5;
-}
-footer a {
-    color: white;
-    text-decoration: underline;
-}
-footer a:hover, footer a:focus {
-    color: #FFCB05;
-}
-
-/* Content taken & modified from UMGPT with the prompt: how do i add a slight drop shadow for each div? UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
+    tran
