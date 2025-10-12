@@ -135,21 +135,76 @@ main > div {
     text-align: left;
 }
 
+/* Lists formatting */
 main > div ol, main > div ul {
     margin-left: 0;
     padding-left: 1.5rem;
-}
-/* Content taken & modified from UMGPT with the prompt: the ordered list numbers are outside of the box. how do i fix this? UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
+} /* Content taken & modified from UMGPT with the prompt: the ordered list numbers are outside of the box. how do i fix this? UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
 
+/* Image and  video formatting */
 main img, main iframe {
     display: block;                             /* allow horizontal centering */
     margin: 0.75rem auto 0.75rem auto;         /* top/bottom margin + horizontal centering */
     max-width: 80%;                            /* never exceed container */
     height: auto;                               /* maintain aspect ratio */
-    border-radius: 0.25rem;                     /* rounded corners for images */
+    border-radius: 0.25rem;                     /* rounded corners */
 }
 
+/* Link hover and formatting */
 main > div a {
     color: #00274C;
     text-decoration: underline;
-    tran
+    transition: all 0.2s ease-in-out;           /* smooth hover transition */
+}
+main > div a:hover, main > div a:focus {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Grid layout for the "Start Here" buttons on home page */
+.start-here .button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 1rem;
+    justify-items: center;
+    margin-top: 1rem;
+}
+.start-here .button-grid .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    background-color: #00274C;
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out; 
+    text-align: center;
+    width: 100%;                /* fill grid column */
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+.start-here .button-grid .button:hover, .start-here .button-grid .button:focus {
+    background-color: #FFCB05;
+    color: #00274C;
+    transform: scale(1.05);
+}
+
+/* ------- Footer ------- */
+footer {
+    border-radius: 0.25rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #00274C;
+    color: #ffffff;
+    line-height: 1.5;
+}
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+footer a:hover, footer a:focus {
+    color: #FFCB05;
+}
+
