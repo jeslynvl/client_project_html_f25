@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Body and Typography Styling */
+/* Text & Typography, Lists, Link Styling */
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
@@ -44,6 +44,7 @@ a {
     text-decoration: underline;
     font-weight: 500;
 }
+/* Content taken & modified from ChatGPT with the prompt, "What are some sample text styling css for a umich website?" I edited the result as needed. UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model].*/
 
 /* Accessibility in navigation */
 a, button {
@@ -51,8 +52,15 @@ a, button {
     min-width: 44px;
 }
 nav a:hover, nav a:focus {
-    transform: scale(1.05);       /* increase size by 10% */
+    transform: scale(1.05);       /* increase size to indicate hover/focus */
     color:#FFCB05;
+}
+
+/* Style all elements when in focus */
+*:focus {
+    background-color: white;
+    color: #00274C;
+    outline: 2px solid #FFCB05;
 }
 
 /* Skip to main content */
@@ -70,23 +78,16 @@ nav a:hover, nav a:focus {
     top: 0;
 }
 
-/* Style all elements when in focus */
-*:focus {
-    background-color: white;
-    color: #00274C;
-    outline: 2px solid #FFCB05;
-}
-
 /* -------  Header ------- */
 header {
     border-radius: 0.25rem;
     background-color: #00274C;
     display: grid;
     grid-template-columns: auto 1fr;
-    align-items: center;             /* vertically center items */
+    align-items: center;
     padding: 0.75rem 1rem;
     gap: 1rem;
-    text-align: center;              /* centers inline text in cells */
+    text-align: center;
 }
 header img {
     width: 100px;
@@ -114,7 +115,6 @@ nav a {
     padding: 0.5rem 1rem;
 }
 
-
 /* ------- Main Layout ------- */
 main {
     display: grid;
@@ -139,18 +139,18 @@ main > div {
 main > div ol, main > div ul {
     margin-left: 0;
     padding-left: 1.5rem;
-} /* Content taken & modified from UMGPT with the prompt: the ordered list numbers are outside of the box. how do i fix this? UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
+} 
+/* Content taken & modified from UMGPT with the prompt: the ordered list numbers are outside of the box. how do i fix this? UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
 
 /* Image and  video formatting */
 main img, main iframe {
-    display: block;                             /* allow horizontal centering */
+    display: block;
     margin: 0.75rem auto 0.75rem auto;         /* top/bottom margin + horizontal centering */
-    max-width: 80%;                            /* never exceed container */
+    max-width: 80%;
     height: auto;                               /* maintain aspect ratio */
-    border-radius: 0.25rem;                     /* rounded corners */
+    border-radius: 0.25rem;
 }
-
-/* Link hover and formatting */
+/* Link and hover & focus formatting */
 main > div a {
     color: #00274C;
     text-decoration: underline;
@@ -190,6 +190,37 @@ main > div a:hover, main > div a:focus {
     transform: scale(1.05);
 }
 
+/* Career Exploration Grid */
+.main-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* two equal columns */
+    gap: 1.5rem;
+    align-items: stretch; /* makes all items in the row the same height */
+    justify-content: center; /* centers grid if narrower than container */
+    width: 100%;
+    box-sizing: border-box;
+    background: none;   /* no box or color */
+    border: none;       /* no border */
+    box-shadow: none;   /* no shadow */
+    padding: 0;
+}
+  /* Content taken & modified from ChatGPT with the prompt, "Use grid and make main-row not have a box" UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
+.ai-prompt, .current-students {
+    background-color: white;
+    border-radius: 0.25rem;
+    padding: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers vertically */
+    align-items: center; /* centers horizontally */
+    height: 100%;
+}
+
+/* Content taken & modified from ChatGPT with the prompt, "Use grid to combine these 2 divs" UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
+
+
 /* ------- Footer ------- */
 footer {
     border-radius: 0.25rem;
@@ -207,4 +238,3 @@ footer a {
 footer a:hover, footer a:focus {
     color: #FFCB05;
 }
-
