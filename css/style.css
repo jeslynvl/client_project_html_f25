@@ -1,11 +1,4 @@
-/* Reset */ 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Text & Typography, Lists, Link Styling */
+/* Text & Typography, Lists, and Links Styling */
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
@@ -63,7 +56,7 @@ nav a:hover, nav a:focus {
     outline: 2px solid #FFCB05;
 }
 
-/* Skip to main content */
+/* Skip to main content button */
 .skip a {
     position: absolute;
     top: -65px;
@@ -237,4 +230,11 @@ footer a {
 }
 footer a:hover, footer a:focus {
     color: #FFCB05;
+}
+
+/* Reset */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
