@@ -361,6 +361,25 @@ footer a:hover, footer a:focus { color: #FFCB05; }
     .error {
         display: block;
     }
+
+    .why-this-resource {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    
+      /* Make each resource-grid item fit nicely in the columns */
+      .why-this-resource .resource-grid {
+        display: flex;
+        flex-direction: column; /* Keep button on top, content below */
+      }
+    
+      /* Optional: make the button bigger on tablets */
+      .why-this-resource .resource-item {
+        font-size: 1.1rem;
+        padding: 1rem;
+      }
 }
 
 /* Content taken & modified from UMGPT with the prompt, "do not remove anything besides redundancy for this style.css" UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model].
