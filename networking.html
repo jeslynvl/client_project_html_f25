@@ -13,12 +13,13 @@
   <div class="skip"><a href="#main">Skip to Main Content</a></div>
   <header>
     <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
     <nav>
       <ul>
-        <li><a href = "index.html">Home</a></li>
-        <li><a href = "resume.html">Resumes</a></li>
-        <li><a href = "networking.html">Networking & Connections</a></li>
-        <li><a href = "career-exploration.html">Career Exploration</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resumes</a></li>
+        <li><a href="networking.html">Networking & Connections</a></li>
+        <li><a href="career-exploration.html">Career Exploration</a></li>
       </ul>
     </nav>
   </header>
@@ -85,8 +86,8 @@
         <a href="https://www.dropbox.com/scl/fi/1it97skwtspcm2yuhf8qq/Winter-2024_Career-Fair-Prep-Workshop.mp4?rlkey=we1hk8fy3dr9tgtvgvo0bh4dn&e=1&st=pu88u6xk&dl=0" class ="button" target="_blank">2024 Career Fair Prep Workshop [Recording]</a>
       </div>
     </div>
-
   </main>
+
   <footer>
     <p>&copy; <span id="year"></span> University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916" target="_blank">UMSI Career Development Office</a></p>
     <div class="footer-contact">
@@ -107,6 +108,13 @@
       <script>
         // Dynamically update footer year
         document.getElementById("year").textContent = new Date().getFullYear();
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+          menuToggle.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+        });
       </script>
   </footer>
 </body>

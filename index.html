@@ -13,12 +13,13 @@
   <div class="skip"><a href="#main">Skip to Main Content</a></div>
   <header>
     <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
     <nav>
       <ul>
-        <li><a href = "index.html">Home</a></li>
-        <li><a href = "resume.html">Resumes</a></li>
-        <li><a href = "networking.html">Networking & Connections</a></li>
-        <li><a href = "career-exploration.html">Career Exploration</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resumes</a></li>
+        <li><a href="networking.html">Networking & Connections</a></li>
+        <li><a href="career-exploration.html">Career Exploration</a></li>
       </ul>
     </nav>
   </header>
@@ -32,7 +33,7 @@
     </div>
     <div class="why-this-resource">
       <h2>Why Use This Resource?</h2>
-      <p>Click each step to expand.</p>
+      <p>Click to expand.</p>
       <div class="resource-grid">
         <button class="resource-item">Everything in One Place</button>
         <div class="re-p">
@@ -128,6 +129,13 @@
       <script>
         // Dynamically update footer year
         document.getElementById("year").textContent = new Date().getFullYear();
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+          menuToggle.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+        });
       </script>
   </footer>
 </body>

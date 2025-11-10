@@ -27,10 +27,9 @@ h3 { font-size: 1rem; }
 
 p, li { margin: 0.5rem 0; font-size: 1rem; }
 ul { margin-left: 1rem; }
+
 a { color: #00274C; text-decoration: underline; font-weight: 500; }
-*:focus { 
-    outline: 2px solid #FFCB05; 
-}
+*:focus { outline: 2px solid #FFCB05; }
 a, button { min-height: 44px; min-width: 44px; }
 
 /* ===================== Skip Link ===================== */
@@ -46,45 +45,82 @@ a, button { min-height: 44px; min-width: 44px; }
 }
 .skip a:focus { top: 0; }
 
-/* ===================== Header & Navigation ===================== */
+/* ===================== Header & Navigation (Mobile) ===================== */
 header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.25rem;
+    display: flex;
+    justify-content: space-between;
     background-color: #00274C;
-    border-radius: 0.25rem;
-    text-align: center;
-}
-header img { width: 80%; margin-left: 10px; }
-nav { justify-self: end; }
-nav ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-right: 10px;
-}
-nav a {
-    display: inline-block;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 600;
     padding: 0.5rem;
+    border-radius: 0.25rem;
+    position: relative;
+}
+header img { width: 100px; }
+
+.menu-toggle {
+    background: none;
+    border: none;
     color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+.menu-toggle.open { transform: rotate(90deg); }
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: #00274C;
+    padding: 1rem;
+    border-radius: 0 0 0.25rem 0.25rem;
+    list-style: none;
+}
+nav ul.show { display: flex; }
+
+nav a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
     text-decoration: none;
+    text-align: left;
+    transition: background-color 0.2s ease;
 }
 nav a:hover, nav a:focus {
-    color: #FFCB05;
-    border-bottom: 3px solid #FFCB05;
-    transform: scale(1.05);
-}
-nav a.active {
     background-color: #FFCB05;
-    color: white;
+    color: #00274C;
+    border-radius: 0.25rem;
+}
+.error h1{
+    font-size: 8rem;
+}
+.error h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.error img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.error a {
+    display: block;
     text-decoration: underline;
-    font-weight: bold;
+    color: #00274C;      /* Optional: match your site's color */
+    font-weight: 600;    /* Optional: emphasize the links */
 }
 
+.error a:hover, .error a:focus {
+    color: #FFCB05;      /* Optional: hover color */
+}
 /* ===================== Main Content ===================== */
 main { display: grid; gap: 2rem; }
 main > div {
@@ -94,7 +130,6 @@ main > div {
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     text-align: left;
 }
-
 main img, main iframe {
     display: block;
     margin: 0.5rem auto;
@@ -102,12 +137,7 @@ main img, main iframe {
     height: auto;
     border-radius: 0.25rem;
 }
-
-main a {
-    color: #00274C;
-    text-decoration: underline;
-    transition: all 0.2s ease-in-out;
-}
+main a { color: #00274C; text-decoration: underline; transition: all 0.2s ease-in-out; }
 main a:hover, main a:focus { font-weight: 600; }
 
 /* ===================== Buttons / Grids ===================== */
@@ -120,37 +150,45 @@ main a:hover, main a:focus { font-weight: 600; }
     background-color: #00274C;
     color: #fff;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 0.25rem;
     transition: all 0.2s ease-in-out;
     text-align: center;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 .button:hover, .button:focus {
     background-color: #FFCB05;
     color: #00274C;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    border: 2px solid #00274C;
 }
-
-/* Home Page Grids */
-.button-grid, .resources-grid {
+.handshake-login .button {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #00274C; /* example button color */
+    color: white;
+    text-decoration: none;
+    height: 50px;
+}
+/* Grids */
+.button-grid, .resources-grid, .networking-grid, .cfp-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
     justify-items: center;
     margin: 1rem 0;
 }
+.button-grid, .resources-grid { grid-template-columns: repeat(3, 1fr); }
+.networking-grid, .cfp-grid { grid-template-columns: repeat(2, 1fr); }
 
 /* Popular resources adjustment */
 .resources-grid .button:nth-last-child(2) { grid-column: 1 / 2; }
 .resources-grid .button:last-child { grid-column: 2 / 4; }
 
 /* Career Exploration Row */
-.main-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    justify-content: center;
-}
+.main-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; justify-content: center; }
 .ai-prompt, .current-students {
     background-color: white;
     border-radius: 0.25rem;
@@ -161,12 +199,10 @@ main a:hover, main a:focus { font-weight: 600; }
     justify-content: center;
     align-items: center;
 }
-
+.current-students button { margin: 1rem 0; }
 
 /* ===================== Resume Page ===================== */
-
-
-.step-number, .resource-item {
+.step-number, .resource-item, .faq-q {
     border: none;
     color: #00274C;
     cursor: pointer;
@@ -178,46 +214,29 @@ main a:hover, main a:focus { font-weight: 600; }
     transition: background-color 0.3s ease;
     margin-bottom: 0.5rem;
 }
-
-.step-number:hover, .step-number.active , .resource-item:hover, .resource-item.active {
+.step-number:hover, .step-number.active, .resource-item:hover, .resource-item.active, .faq-q:hover, .faq-q.active {
     background-color: #FFCB05;
     color: #00274C;
 }
+.step-number::after, .resource-item::after { content: "▼"; position: absolute; right: 13px; transition: transform 0.2s ease; }
+.step-number.active::after, .resource-item.active::after { transform: rotate(180deg); }
 
-.step-number::after, .resource-item::after {
-    content: "▼";
-    position: absolute;
-    right: 13px;
-    transition: transform 0.3s ease;
-}
-.step-number.active::after, .resource-item.active::after {
-    transform: rotate(180deg); /* up arrow */
-    border-color: #00274C;
-}
-
-/* Step content */
-.step-p, .re-p {
+.step-p, .re-p, .faq-a {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    margin-bottom: 0.5rem;
-}
-.step-p.show, .re-p.show {
-    max-height: 200px; /* adjust based on content */
-    padding: 0.5rem 1rem;
-    background-color: #f5f5f5;
+    border-left: 3px solid #00274C;
     border-radius: 0 0 0.25rem 0.25rem;
+    margin-bottom: 0.25rem;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
+.step-p.show, .re-p.show, .faq-a.show { max-height: 200px; padding: 0.5rem; background-color: #f5f5f5; }
 
-/* Grid for resume resources */
 .resume-resources .resources {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-    gap: 0.5rem;                             /* space between items */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
     margin: 1rem 0;
 }
-
-/* Buttons styling */
 .resume-resources .resources .button {
     display: flex;
     justify-content: center;
@@ -232,151 +251,116 @@ main a:hover, main a:focus { font-weight: 600; }
     transition: all 0.2s ease-in-out;
     height: 150px;
 }
-
-.resume-resources .resources .button:hover,
-.resume-resources .resources .button:focus {
+.resume-resources .resources .button:hover, .resume-resources .resources .button:focus {
     background-color: #FFCB05;
     color: #00274C;
     transform: scale(1.05);
 }
+.resume-resources .resources .button:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; }
 
-/* Center last item if odd number of items */
-.resume-resources .resources .button:last-child:nth-child(odd) {
-    grid-column: 1 / -1; /* span entire row to center */
-    justify-self: center;
-}
-
-/* Collapsible headings */
-.resume-resources h2,
-.resume-resources h3 {
-  cursor: pointer;
-  position: relative;
-  padding-right: 2rem; /* space for arrow */
-}
-/* Arrow indicator using a pseudo-element */
-.resume-resources h2::after, .resume-resources h3::after {
-  content: "▲";
-  position: absolute;
-  right: 0;
-  font-size: smaller;
-  transition: transform 0.3s ease;
-}
-
-/* Rotated arrow when active */
-.resume-resources h2.active::after, .resume-resources h3.active::after {
-  transform: rotate(-180deg); /* arrow points up when collapsed */
-}
-
-/* Nested resource grids */
-.resource > .resource, .slides > .resource {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
-
-/* Center last child if odd number */
-.resource > .resource > a:last-child, .slides > .resource > a:last-child {
-  grid-column: 1 / -1;
-  justify-self: center;
-}
-
-
-/* ===================== FAQ Sections ===================== */
-.faq-q {
-    border: none;
-    color: #00274C;
+.resume-resources h2, .resume-resources h3 {
     cursor: pointer;
-    padding: 1rem 2.5rem 1rem 1rem;
-    width: 100%;
-    text-align: left;
-    border-radius: 0.25rem;
     position: relative;
-    margin-bottom: 0.5rem;
-    transition: background-color 0.3s ease;
+    padding-right: 2rem;
 }
-.faq-q:hover, .faq-q.active { background-color: #FFCB05; color: #00274C; }
-.faq-q::after {
-    content: "+";
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease, content 0.3s ease;
-}
-.faq-q.active::after { content: "×"; transform: translateY(-50%) rotate(90deg); }
-.faq-a {
-    max-height: 0;
-    overflow: hidden;
-    border-left: 3px solid #00274C;
-    border-radius: 0 0 0.25rem 0.25rem;
-    margin-bottom: 0.25rem;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-.faq-a p { margin: 0.25rem 0; color: #000; }
-.faq-a.show { max-height: 200px; padding: 0.5rem; }
+.resume-resources h2::after, .resume-resources h3::after { content: "▲"; position: absolute; right: 0; font-size: smaller; transition: transform 0.3s ease; }
+.resume-resources h2.active::after, .resume-resources h3.active::after { transform: rotate(-180deg); }
 
-/* Networking / Career Fair Grids */
-.networking-grid, .cfp-grid {
+.resource > .resource, .slides > .resource {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
-    justify-items: center;
-    margin: 1rem 0;
 }
-.networking-grid { grid-template-columns: repeat(2, 1fr); }
-.cfp-grid { grid-template-columns: repeat(2, 1fr); }
-.cfp-grid .button {
-    height: 150px;
-    padding: 1rem;
-    font-weight: 600;
-    border-radius: 0.25rem;
-}
-.cfp-grid .button:hover { border: 2px solid #00274C; transform: translateY(-2px); }
-
-/* Career Fair Prep Container */
-.career-fair-prep {
-    max-width: 100%;
-    margin: 3rem auto;
-    padding: 1.5rem;
-    background-color: #f9f9f9;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
+.resource > .resource > a:last-child, .slides > .resource > a:last-child { grid-column: 1 / -1; justify-self: center; }
 
 /* ===================== Footer ===================== */
 footer {
     border-radius: 0.25rem;
     margin-top: 2rem;
     padding: 1.5rem;
-    text-align: center;
+    text-align: left;
     background-color: #00274C;
     color: #fff;
     line-height: 1.5;
 }
 footer a { color: white; text-decoration: underline; }
 footer a:hover, footer a:focus { color: #FFCB05; }
-.footer-contact {
-    margin-top: 0.5rem;
-  }
-  
-  .footer-social {
+.footer-contact { margin-top: 0.5rem; }
+.footer-social {
     margin-top: 0.75rem;
     display: flex;
-    justify-content: center;
     gap: 1rem;
-  }
-  
-  .footer-social img {
-    width: 28px;
-    height: 28px;
-    filter: brightness(0) invert(1); /* makes icons white */
+}
+.footer-social img {
+    width: 44px;
+    height: 44px;
+    filter: brightness(0) invert(1);
     transition: transform 0.2s ease, filter 0.2s ease;
-  }
-  
-  .footer-social a:hover img,
-  .footer-social a:focus img {
+}
+.footer-social a:hover img, .footer-social a:focus img {
     transform: scale(1.1);
-    filter: brightness(1) invert(0); /* gold or black depending on icon */
-  }
-  /*  Content taken & modified from UMGPT with the prompt, "Add social media and contact information to header" UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. */
+    filter: brightness(1) invert(0);
+}
 
+/* ===================== Header & Navigation (Desktop ≥768px) ===================== */
+@media (min-width: 768px) {
+    main { display: grid; gap: 1rem; }
+    header {
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.5rem 1.5rem;
+    }
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 75px;
+        width: 100%;
+        background-color: #00274C;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 0.25rem;
+        transition: all 0.2s ease-in-out;
+        text-align: center;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+    .menu-toggle { display: none; }
+    nav ul {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+        background: none;
+    }
+    nav a { width: auto; padding: 0.5rem 1rem; text-align: center; }
+    main img, main iframe { max-width: 75%; }
+    .resume-resources .resources { grid-template-columns: repeat(3, 1fr); }
+    .resume-resources .resources .button { font-weight: 600; height: 100px; }
+    .question .button { height: 20px; }
+    .current-students button {
+        padding: 0.5rem 1rem;
+        margin: 2rem 0;
+    }
+    .error img {
+        width: 25%;
+        display: block;
+        margin: 0 0 2rem 0;
+    }
+    .error h1, .error h3 {
+        text-align: center;
+    }
+
+    .error p, .error a{
+        text-align: left;
+        font-size: 1.25rem;
+    }
+
+    .error {
+        display: block;
+    }
+}
+
+/* Content taken & modified from UMGPT with the prompt, "do not remove anything besides redundancy for this style.css" UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model].

@@ -12,16 +12,17 @@
 <body>
     <div class="skip"><a href="#main">Skip to Main Content</a></div>
     <header>
-      <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
-      <nav>
-        <ul>
-          <li><a href = "index.html">Home</a></li>
-          <li><a href = "resume.html">Resumes</a></li>
-          <li><a href = "networking.html">Networking & Connections</a></li>
-          <li><a href = "career-exploration.html">Career Exploration</a></li>
-        </ul>
-      </nav>
-    </header>
+        <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resumes</a></li>
+            <li><a href="networking.html">Networking & Connections</a></li>
+            <li><a href="career-exploration.html">Career Exploration</a></li>
+          </ul>
+        </nav>
+      </header>
     <main id="main" tabindex="-1">
         <div class="find-path">
             <h1>Career Exploration Hub</h1>
@@ -41,15 +42,17 @@
             <div class="current-students">
                 <h2>Current Students: Log in to UMSI CareerLink</h2>
                 <p>CareerLink is UMSI’s exclusive career portal where students can access job postings, internships, and employer connections.
-                <a href="https://si-umich.12twenty.com/Login" target="_blank">Log in to UMSI CareerLink</a> with your U-M credentials to get started.</p>
+                <a href="https://si-umich.12twenty.com/Login" class="button" target="_blank">Log in to UMSI CareerLink</a></p>
             </div>
         </div>
         <!-- Content taken & modified from ChatGPT with the prompt, "Use grid to combine these 2 divs" -->
         <!-- Content taken & modified from ChatGPT with the prompt, "include this in a h2 Current students: Log in to UMSI CareerLink" -->
-        <div class = "handshake-login">
+        <div class="handshake-login">
             <h2>Handshake</h2>
-            <p> Ready to explore further? <a href="https://umich.instructure.com/courses/137916/pages/talk-to-a-career-coach" target="_blank">Meet with a Career Coach</a> to map out your path. 
-            They can help you connect your skills and interests with UMSI’s wide range of career opportunities. </p>
+            <p>Ready to explore further?</p>
+            <a href="https://umich.instructure.com/courses/137916/pages/talk-to-a-career-coach"
+               class="button"
+               target="_blank">U-M Handshake Login</a>
         </div>
 
         <div class = "next-steps">
@@ -65,7 +68,7 @@
     <footer>
         <p>&copy; <span id="year"></span> University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916" target="_blank">UMSI Career Development Office</a></p>
         <div class="footer-contact">
-          <p>Contact: <a href="mailto:umsi.careers@umich.edu">umsi.careers@umich.edu</a> | (734) 615-8439</p>
+            <p>Contact: <a href="mailto:umsi.careers@umich.edu">umsi.careers@umich.edu</a> | (734) 615-8439</p>
         </div>
         <div class="footer-social">
             <a href="https://www.linkedin.com/school/university-of-michigan-school-of-information/" target="_blank" aria-label="LinkedIn">
@@ -82,8 +85,14 @@
           <script>
             // Dynamically update footer year
             document.getElementById("year").textContent = new Date().getFullYear();
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            menuToggle.addEventListener('click', () => {
+              navMenu.classList.toggle('show');
+              menuToggle.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+            });
           </script>
     </footer>
-    
 </body>
 </html>

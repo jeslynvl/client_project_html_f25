@@ -13,12 +13,13 @@
   <div class="skip"><a href="#main">Skip to Main Content</a></div>
   <header>
     <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
     <nav>
       <ul>
-        <li><a href = "index.html">Home</a></li>
-        <li><a href = "resume.html">Resumes</a></li>
-        <li><a href = "networking.html">Networking & Connections</a></li>
-        <li><a href = "career-exploration.html">Career Exploration</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resumes</a></li>
+        <li><a href="networking.html">Networking & Connections</a></li>
+        <li><a href="career-exploration.html">Career Exploration</a></li>
       </ul>
     </nav>
   </header>
@@ -100,7 +101,7 @@
           <div class="resources">
             <a href="https://docs.google.com/document/d/15b0q8LJQdyR-fPMlEWRqNSSz-Ib9G3Vf1ZyHXQoy6no/edit?tab=t.0" class="button" target="_blank">LinkedIn Profile Rubric</a>
             <a href="https://docs.google.com/presentation/d/1B9SLFjGmOyvstJEh2GMQGiXVXs55EOQ5BecB9Jnfs8I/edit?usp=sharing" class="button" target="_blank">LinkedIn Best Practices</a>
-            <iframe class="youtube-video" src="https://www.youtube.com/watch?v=CeNYcGI7N84" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>How to Find Hiring Managers on LinkedIn</iframe>
+            <iframe class="youtube-video" src="https://www.youtube.com/watch?v=CeNYcGI7N84" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <div class="slides">
             <h3>Workshop Slides</h3>
@@ -124,23 +125,25 @@
             <a href="https://docs.google.com/document/d/10ftmYAc1vs6yYSIAuGIkAvwC21Z1HDM0WyKTaZZzqUo/edit?tab=t.0" class="button" target="_blank">UX Portfolio Best Practices Handout</a>
             <a href="https://www.cofolios.com/" class="button" target="_blank">Cofolio Sample Portfolios</a>
           </div>
-        <div class="workshops">
+        <div class="slides">
           <h3>Workshop Slides</h3>
-          <div class="resource">
+          <div class="slides">
             <a href="https://docs.google.com/presentation/d/1NcQvaWDYhxiNDhS1usiM0aABkUtLmfiyRuw7SWxpwfg/edit" class="button" target="_blank">Intro to UX Portfolios</a>
             <a href="https://drive.google.com/file/d/1Z5aN4RkZfsaSMpgSknt4V6wN6mSekXyH/view" class="button" target="_blank">Amazon's UX Research vs Design Portfolios</a>
           </div>
         </div>
         <div class="recordings">
           <h3>Recordings</h3>
-          <div class="resource">
+          <div class="recordings">
             <a href="https://www.dropbox.com/scl/fi/zqppeep3pf6jj4ag9w0v1/Fall-2025_Alumni-UX-Portfolio-Review-Panel.mp4?rlkey=wffush9h36tacx5p5djk9a2wv&e=1&st=xw29bhls&dl=0" class="button" target="_blank">Alumni UX Portfolio Review Panel - Fall 2025</a>
             <a href="https://www.dropbox.com/scl/fi/nhfianhxm86drbi5t28id/10.23.24-Portfolio-Review-Panel.mp4?rlkey=9z8xvwemltzkcnv5pc0olff4h&e=1&st=ixhsum14&dl=0" class="button" target="_blank">Alumni UX Portfolio Review Panel - Fall 2024</a>
           </div>
         </div>
       </div>
     </div>
+    <div class="question">
       <p>Ready for review? <a href="https://umich.instructure.com/courses/137916/pages/talk-to-a-career-coach" class="button" target="_blank">Book a resume review appointment with a CDO Career Coach</a></p>
+    </div>
     </div>
 
     <script>
@@ -228,6 +231,13 @@
       <script>
         // Dynamically update footer year
         document.getElementById("year").textContent = new Date().getFullYear();
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+          menuToggle.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+        });
       </script>
   </footer>
 </body>
