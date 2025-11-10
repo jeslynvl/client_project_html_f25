@@ -32,22 +32,25 @@
              <!-- Content taken & modified from ChatGPT with the prompt, "Help me write a sample description of the Career Exploration page, and then pasted in the client objectives & project requirement and the example of description from index.html  -->
 
         <div class="main-row">
-        <div class="ai-prompt">
-            <h2>AI Prompt Resource Guide: Career Exploration</h2>
-            <p> Learn how to use AI tools effectively for career exploration.
-            <a href="https://docs.google.com/document/d/1C-rxX5VcjVH7YjMdHil1VMo9ZdSOHmausOcX61dld-g/edit?tab=t.0#heading=h.m3fsccjzqtbh" target="_blank">This guide</a>
-            provides sample prompts you can adapt to research career paths, prepare for interviews, and discover job opportunities in your field of interest.</p>
+            <div class="ai-prompt">
+                <h2>AI Prompt Resource Guide: Career Exploration</h2>
+                <p> Learn how to use AI tools effectively for career exploration.
+                <a href="https://docs.google.com/document/d/1C-rxX5VcjVH7YjMdHil1VMo9ZdSOHmausOcX61dld-g/edit?tab=t.0#heading=h.m3fsccjzqtbh" target="_blank">This guide</a>
+                provides sample prompts you can adapt to research career paths, prepare for interviews, and discover job opportunities in your field of interest.</p>
+            </div>
+            <div class="current-students">
+                <h2>Current Students: Log in to UMSI CareerLink</h2>
+                <p>CareerLink is UMSI’s exclusive career portal where students can access job postings, internships, and employer connections.
+                <a href="https://si-umich.12twenty.com/Login" target="_blank">Log in to UMSI CareerLink</a> with your U-M credentials to get started.</p>
+            </div>
         </div>
-            
-        <div class="current-students">
-            <h2>Current Students: Log in to UMSI CareerLink</h2>
-            <p>CareerLink is UMSI’s exclusive career portal where students can access job postings, internships, and employer connections.
-            <a href="https://si-umich.12twenty.com/Login" target="_blank">Log in to UMSI CareerLink</a> with your U-M credentials to get started.</p>
-        </div>
-    </div>
-        
         <!-- Content taken & modified from ChatGPT with the prompt, "Use grid to combine these 2 divs" -->
         <!-- Content taken & modified from ChatGPT with the prompt, "include this in a h2 Current students: Log in to UMSI CareerLink" -->
+        <div class = "handshake-login">
+            <h2>Handshake</h2>
+            <p> Ready to explore further? <a href="https://umich.instructure.com/courses/137916/pages/talk-to-a-career-coach" target="_blank">Meet with a Career Coach</a> to map out your path. 
+            They can help you connect your skills and interests with UMSI’s wide range of career opportunities. </p>
+        </div>
 
         <div class = "next-steps">
             <h2>Next Steps</h2>
@@ -55,11 +58,31 @@
             They can help you connect your skills and interests with UMSI’s wide range of career opportunities. </p>
             <img src="images/UMSI_MHIClassroom_02202023_12.JPG" alt="Students work in a auditorium style classroom in U-M north quad.">
         </div>
+
         <!-- Content taken & modified from ChatGPT with the prompt, "Help me write a sample description of the next steps on the Career Exploration page, and then pasted in the client objectives & project requirement and the examples from index.html  -->
     </main>
 
     <footer>
-        <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office </a></p>
+        <p>&copy; <span id="year"></span> University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916" target="_blank">UMSI Career Development Office</a></p>
+        <div class="footer-contact">
+          <p>Contact: <a href="mailto:umsi.careers@umich.edu">umsi.careers@umich.edu</a> | (734) 615-8439</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/school/university-of-michigan-school-of-information/" target="_blank" aria-label="LinkedIn">
+              <img src="images/linkedin-icon.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/umsi/" target="_blank" aria-label="Instagram">
+              <img src="images/instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://twitter.com/umsi" target="_blank" aria-label="Twitter">
+              <img src="images/twitter-icon.png" alt="Twitter">
+            </a>
+        </div>
+          <!--  Content taken & modified from UMGPT with the prompt, "Add social media and contact information to header" UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. -->
+          <script>
+            // Dynamically update footer year
+            document.getElementById("year").textContent = new Date().getFullYear();
+          </script>
     </footer>
     
 </body>

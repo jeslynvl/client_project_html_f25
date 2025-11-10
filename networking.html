@@ -31,40 +31,83 @@
         <img src="images/UMSI_CareerFair2020_11.JPG" alt="Students in a conference room in the Michigan League.">
       </div>
         <!-- Content taken & modified from ChatGPT with the prompt, "Help me write a sample description of the Networking page, and then pasted in the client objectives & project requirement and the example of description from index.html  -->
-      
-    <div class="faq">
+  
+    <div class="networking-faq">
       <h2>Networking FAQ</h2>
-        <ul>
-            <li><strong>How do I start networking if I’m shy?</strong> Start small by connecting with classmates, student groups, or alumni via email or LinkedIn.</li>
-            <li><strong>What is an informational interview?</strong> A conversation with a professional to learn about their career path and industry insights.</li>
-            <li><strong>How do I follow up after an event?</strong> Send a brief thank-you email, mention something you discussed, and keep the connection warm.</li>
-        </ul>
+      <div class="faq-dropdown">
+        <button class="faq-q">How do I start networking if I’m shy?</button>
+        <div class="faq-a"><p>Start small by connecting with classmates, student groups, or alumni via email or LinkedIn.</p>
+        </div>
       </div>
+      <div class="faq-dropdown">
+        <button class="faq-q">What is an informational interview?</button>
+        <div class="faq-a"><p>A conversation with a professional to learn about their career path and industry insights.</p>
+        </div>
+      </div>
+      <div class="faq-dropdown">
+        <button class="faq-q">How do I follow up after an event?</button>
+        <div class="faq-a"><p>Send a brief thank-you email, mention something you discussed, and keep the connection warm.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const faqButtons = document.querySelectorAll('.faq-q');
+      faqButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Toggle active state for the clicked question
+          button.classList.toggle('active');
+          // Toggle the answer visibility
+          const answer = button.nextElementSibling;
+          answer.classList.toggle('show');
+        });
+      });
+    </script>
+    <!-- Content taken & modified from ChatGPT with the prompt, "Help me style this as a FAQ accordion in javascript"  -->
+
 <!-- Content taken & modified from ChatGPT with the prompt, "Help me write some sample questions on the networking FAQ section", and then pasted in the client objectives & project requirement and the FAQs from index.html  -->
-    <div class="popular-resources">
+    <div class="popular-networking-resources">
       <h2>Popular Networking Resources</h2>
-      <ul>
-        <li>
-          <a href="https://docs.google.com/presentation/d/1R6azi49e7vd3ubRtdm33qG6Aq3bLBDBue7blM6pv49I/edit?slide=id.g26478bd383d_0_6#slide=id.g26478bd383d_0_6" target="_blank">
-            Intro to Making Connections
-          </a>
-        </li>
-        <li>
-          <a href="https://docs.google.com/document/d/1cwq2KtdKQbO-tICHKUyKRA3QY4_3VJ8NLC2kwPBY4dI/edit?tab=t.0" target="_blank">
-            Networking Outreach Email Examples
-          </a> 
-        </li>
-        <li>
-          <a href="https://docs.google.com/presentation/d/1QR0UA8V4d_hjHuayVbzF5_bx8d_8m3Ohvx9e5SiBodg/edit?usp=sharing" target="_blank">
-            Informational Interviews Using the TIARA Method
-          </a>
-        </li>
-      </ul>
-    </div>   
+      <div class="networking-grid">
+          <a href="https://docs.google.com/presentation/d/1R6azi49e7vd3ubRtdm33qG6Aq3bLBDBue7blM6pv49I/edit?slide=id.g26478bd383d_0_6#slide=id.g26478bd383d_0_6" class="button" target="_blank">Intro to Making Connections</a>
+          <a href="https://docs.google.com/document/d/1cwq2KtdKQbO-tICHKUyKRA3QY4_3VJ8NLC2kwPBY4dI/edit?tab=t.0" class="button" target="_blank"> Networking Outreach Email Examples</a> 
+          <a href="https://docs.google.com/presentation/d/1QR0UA8V4d_hjHuayVbzF5_bx8d_8m3Ohvx9e5SiBodg/edit?usp=sharing" class="button" target="_blank">Informational Interviews Using the TIARA Method</a>
+          <a href="https://docs.google.com/document/d/1633aBaWXIZW_ImTP-jKKN0QNXK9-RpXXmVznRgA4ZHQ/edit?tab=t.0" class="button" target="_blank">Elevator Pitch Rubric</a>
+          <a href="https://docs.google.com/document/d/1cwq2KtdKQbO-tICHKUyKRA3QY4_3VJ8NLC2kwPBY4dI/edit?tab=t.0" class="button" target="_blank"> Networking Outreach Emails</a>
+          <a href="https://docs.google.com/spreadsheets/d/1JtqyC7YSip571jGJjw8JTzCfQSQQX-VmIV4KS_PZ1EE/edit?gid=1589706144#gid=1589706144" class="button" target="_blank"> Conference Preparation</a>
+      </div>
+    </div> 
+
+    <div class ="career-fair-prep">
+      <h2>Career Fair Preparation</h2>
+      <div class="cfp-grid">
+        <a href="https://docs.google.com/presentation/d/1ZQG4dY5Let1iot2GuKhV1mO_vgbvxv4YTNE2HP2qqf8/edit?usp=sharing" class ="button" target="_blank">2024 Career Fair Prep [Workshop Slides]</a>
+        <a href="https://www.dropbox.com/scl/fi/1it97skwtspcm2yuhf8qq/Winter-2024_Career-Fair-Prep-Workshop.mp4?rlkey=we1hk8fy3dr9tgtvgvo0bh4dn&e=1&st=pu88u6xk&dl=0" class ="button" target="_blank">2024 Career Fair Prep Workshop [Recording]</a>
+      </div>
+    </div>
 
   </main>
-    <footer>
-        <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office </a></p>
-    </footer>
+  <footer>
+    <p>&copy; <span id="year"></span> University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916" target="_blank">UMSI Career Development Office</a></p>
+    <div class="footer-contact">
+      <p>Contact: <a href="mailto:umsi.careers@umich.edu">umsi.careers@umich.edu</a> | (734) 615-8439</p>
+    </div>
+    <div class="footer-social">
+        <a href="https://www.linkedin.com/school/university-of-michigan-school-of-information/" target="_blank" aria-label="LinkedIn">
+          <img src="images/linkedin-icon.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/umsi/" target="_blank" aria-label="Instagram">
+          <img src="images/instagram-icon.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/umsi" target="_blank" aria-label="Twitter">
+          <img src="images/twitter-icon.png" alt="Twitter">
+        </a>
+    </div>
+      <!--  Content taken & modified from UMGPT with the prompt, "Add social media and contact information to header" UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. -->
+      <script>
+        // Dynamically update footer year
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+  </footer>
 </body>
 </html>
