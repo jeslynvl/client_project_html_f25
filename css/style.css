@@ -308,8 +308,29 @@ footer a:hover, footer a:focus { color: #FFCB05; }
     header {
         justify-content: space-evenly;
         align-items: center;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 0.5rem;
     }
+    .intro, .build-network {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* two equal columns */
+        align-items: start; /* align top */
+      }
+      .intro h2,
+      .intro p, .build-network h2, .build-network p {
+        grid-column: 1; /*  stay in left column */
+      }
+      .intro h1, .build-network h1 {
+        grid-column: 1 / -1;
+      }
+    
+      .intro iframe.youtube-video, .build-network img {
+        grid-column: 2;
+        width: 100%;
+         height: auto;
+         object-fit: cover; /* keeps image proportionate */
+        border-radius: 0.25rem;
+      }
+
     .button {
         display: flex;
         justify-content: center;
@@ -336,7 +357,7 @@ footer a:hover, footer a:focus { color: #FFCB05; }
         background: none;
     }
     nav a { width: auto; padding: 0.5rem 1rem; text-align: center; }
-    main img, main iframe { max-width: 75%; }
+    main img, main iframe { max-width: 75%; max-height: 50% }
     .resume-resources .resources { grid-template-columns: repeat(3, 1fr); }
     .resume-resources .resources .button { font-weight: 600; height: 100px; }
     .question .button { height: 20px; }
