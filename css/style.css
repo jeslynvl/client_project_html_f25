@@ -385,22 +385,68 @@ footer a:hover, footer a:focus { color: #FFCB05; }
 
     .why-this-resource {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto 1fr;
+        row-gap: 1rem;
+      }
+    
+      /* Row 1: h2 */
+      .why-this-resource h2 {
+        grid-column: 1 / -1; /* full width */
+      }
+    
+      /* Row 2: p */
+      .why-this-resource p {
+        grid-column: 1 / -1; /* full width */
+        margin: 0;
+      }
+    
+      /* Row 3+: the resource grid */
+      .why-this-resource {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
         gap: 1rem;
-        margin-top: 1rem;
       }
     
-      /* Make each resource-grid item fit nicely in the columns */
       .why-this-resource .resource-grid {
-        display: flex;
-        flex-direction: column; /* Keep button on top, content below */
+        justify-self: stretch;
       }
     
-      /* Optional: make the button bigger on tablets */
-      .why-this-resource .resource-item {
+      .why-this-resource .resource-grid > .resource-item {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        padding: 1rem;
+        width: 100%;
+      }
+    
+      .why-this-resource .resource-grid > .re-p {
+        display: block;
+      }
+      /* Make buttons bigger on tablet */
+      .resource-item {
         font-size: 1.1rem;
         padding: 1rem;
       }
+    
+      .slides .slides,
+  .recordings .recordings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 columns */
+    gap: 1rem; /* space between buttons */
+  }
+
+  /* Make buttons fill column nicely */
+  .slides .slides .button,
+  .recordings .recordings .button {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .resume-steps .step-number, .resource-grid .resource-item {
+    font-size: 1.25rem; /* bigger text */
+    padding: 1rem 1rem; /* more padding top/bottom and sides */
+    color: #fff;
+    background-color: #00274C;
+  }
 }
 
 /* Content taken & modified from UMGPT with the prompt, "do not remove anything besides redundancy for this style.css" UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model].
